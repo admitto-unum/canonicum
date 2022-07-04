@@ -1,0 +1,176 @@
+# Overview
+
+Coding conventions will generally follow the Java SE
+[Code Conventions for the Java Programming Language](https://www.oracle.com/java/technologies/javase/codeconventions-introduction.html) with a few noted modifications.
+
+## Indentation and Tabs
+
+Two spaces should be used as the unit of indentation.  The Tab character will not be used and tabs will be set
+to two spaces.
+
+## Comments and Documentation
+
+Documentation comments generally follow the [How to Write Doc Comments for the Javadoc Tool](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html),
+however, [Docygen](https://www.doxygen.nl/index.html) is used instead of JavaDoc.  This tool generates a nicer 
+documentation site and allows some formatting using MarkDown style markup.  This makes writing documentation easier.
+Docygen also will generate class diagrams automatically.
+
+Comments should be written in complete sentences and should *not state the obvious.*  For example, documentation for 
+the method **getImage()** should not state *this method will get the image*.  That fact is stated in method name. Instead 
+comments should provide informative and useful information about the method.  If the method's purpose is 
+obvious then the method need not be commented. This may be the case in Jave Bean classes where setters and getters do 
+nothing more the pass object references.
+
+### What should be documented
+
+* Classes are required to have accompanying documentation
+* *public* methods must be documented 
+* *protected* methods should be documented 
+* *private* methods do not need to be comment since private methods in JavaDoc are not generated
+
+Documentation comments with Docygen have following structure:
+
+* Required brief statement of the purpose. This must be limited to a single sentence containing a concise but complete description of the API item
+* Optional detailed description
+* Optional example with the header "*Example*"
+* JavaDoc tags
+    * Required, @author 
+    * Required, @since - Version of the software the class was added.  For methods this should only be included if added after the first version.
+
+*Example*
+
+    /**
+     * # DataTransfer
+     *
+     * General *DataTransfer* Utilities for internal Domain Specific Language (_DSL_).
+     *
+     * This class defines an internal DSL for transferring field values from a _source_ object to a
+     * _destination_ object. Only fields with the same name and type will be copied.
+     *
+     * *Example*
+     *
+     * Given two objects (*source* and *destination*) with some fields that have the same name and type
+     * copy matching fields from source to destination.
+     *
+     *
+     *      Source s = new Source();
+     *      Destination d = new Destination();
+     *      DataTransfer.with(s)
+     *          .moveCorrespondingTo(d)
+     *          .onNotify(changeSet -> {
+     *              System.out.println(changeSet);
+     *          });
+     *
+     *
+     *
+     * @author Troy L. Boyd
+     *
+     * @since 0.1
+     */
+
+
+## Modifiers
+
+Modifiers shall be listed in the order specified by the JVM.
+
+    [public | protected | private] static final 
+
+## Class and Interface Declarations
+
+Class and interface declarations follow the [Java SE conventions](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html) 
+*except for* **extends* and **implements** clauses are on separate lines and indented (Python like syntax).
+
+*Example*
+
+    public final class Success<S, F>
+      extends Status<S, F>
+      implements
+        PredicateResult<S, F> {
+      ...
+   }
+
+## Method Declarations
+
+Method declarations follow the [Java SE conventions](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html) 
+*except for* **throws** clauses are on separate lines and indented (Python like syntax).
+
+*Example*
+
+    public TransferResultMap moveCorrespondingTo(final Object destination, Function2<String, Object, Object> callback)
+      throws DataTransferException {
+      ...
+    }
+
+## Names
+
+API names should be "self-documenting", meaning they tell you basically what the API does.  For all names avoid 
+using abbreviations, but, if used use only [common abbreviations](https://abbreviations.yourdictionary.com/articles/list-of-commonly-used-abbreviations.html),
+or should be document it.
+
+### Package Names
+
+It should be an in lowercase ASCII letter such as java, lang. If the name contains multiple words, 
+it should be separated by dots (.) such as java.util, java. lang.
+
+### Class and Interface
+
+It should start with the uppercase letter. It should be a noun such as Color, Button, System, Thread, etc. Use 
+appropriate words, instead of acronyms.
+
+### Trait
+
+An interface that defines *default* methods is known as a *Trait* (also known as a Mixin interface)
+and will have the suffix *Trait*.
+
+### Method name
+
+Usually, the method name should either be a verb or verb-noun combination starting with the lower letter. If 
+it contains multiple words then every inner word should start with uppercase.  If the method returns a value 
+the name should indicate the type returned.  For example if the name is  _getPoint()_  then the return object 
+should be an instance of _Point_.  If the method has side affects then the name should indicate what affects
+are expected.  
+
+**Note:** See [Method Name Conventions](./method_name_conventions.md) for additional specific method naming conventions.
+
+Functions should normally be short, between 5–15 lines but this is not an absolute rule. There may be cases where 
+a function is a single large switch statement or sometimes having a larger function may be advantageous. But where 
+ever applicable, try to stick to *small function sizes*.
+
+The starting brace ({ ) should be at the end of the same line as the declaration statement or method and the ending 
+brace (} ) must be on a separate line and aligned with the conditional/class.
+
+### Variable Names
+
+The name should be short and such that it tells the reader of the program what this variable stores.
+
+* *Instance variable*: Usually variable name should be a **noun** starting with a lowercase letter. If it contains 
+multiple words then every inner word should start with uppercase.
+
+* *Constants*: Usually, a constant name should be a **noun**. It should contain the only uppercase If it contains 
+multiple words then words are separated with the ( _ ) underscore symbol. Usually, we declare constants with public 
+static and final modifiers.
+
+* *boolean variables*: It uses **noun** starting with a lowercase letter and end with **Ind** for indicator. 
+If it contains multiple words then every inner word should start with uppercase.
+
+* *Collections*: It uses plural **noun** starting with a lowercase letter.  If it contains multiple words then 
+every inner word should start with uppercase.
+
+* *Generic variables* should have the same name as their type.
+
+* *Count variables*: **Count** suffix should be used for variables representing a number of objects.
+
+## Declarations
+
+* One declaration per line.
+* The static/class variables should be placed in the sequence: 
+    1. public class variables
+    2. protected
+    3. package/default level i.e. with no access modifier
+    4. private
+* Next, class constructors should be declared followed by the inner classes, if applicable.
+* Local declarations that hide declarations at higher levels should be avoided.
+* Declarations for local variables should be only at the beginning of blocks.
+* Literal constants should not be coded directly.
+
+
