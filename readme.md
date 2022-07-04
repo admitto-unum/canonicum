@@ -1,5 +1,3 @@
-# canonicum
-
 # Introduction
 
 This project was created using [c4builder](https://adrianvlupu.github.io/C4-Builder/)
