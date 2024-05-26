@@ -47,5 +47,10 @@
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+    {% if page.mermaid %}
+      {% include footer-scripts.html %}
+    {% endif %}
+
   </body>
 </html>

@@ -3,3 +3,8 @@ description: Dinky is a red hot theme for GitHub Pages.
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-dinky
+
+gems: [jekyll-mermaid]
+
+mermaid:
+  src: '/home/tlboyd/.local/share/Trash/files/myblog/node_modules/mermaid/dist/mermaid.js'

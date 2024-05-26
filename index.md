@@ -1,8 +1,18 @@
 ---
 layout: default
+mermaid: true
+tags: [Mermaid]
 ---
 
-ABCD
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```  
+
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
