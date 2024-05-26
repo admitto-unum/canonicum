@@ -1,1 +1,0 @@
-# Cannonicum with Jekyll
