@@ -10,6 +10,20 @@ document directly and display the image of the model.
 
 Jekyll is a static site generator. It takes text written in your favorite markup language and uses layouts to create a static website.
 
+To build this site locally use:
+
+```bash
+jekyll build
+```
+
+To run this documenation a local site use:
+
+```bash
+jekyll serve --livereload
+```
+
+
+
 # About Mermaid
 
 Mermaid lets you create diagrams and visualizations using text and code.
