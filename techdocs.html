@@ -1,0 +1,27 @@
+---
+layout: default
+title: Technical Documents
+---
+
+<h1>Technical Documents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Issues #</th>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Author</th>
+    </tr>
+  </thead>
+
+  {% for document in site.techdocs %}
+    <tr>
+      <td><a href="{{ document.url }}">{{document.issue}}</a></td>
+      <td>{{ document.title }}</td>
+      <td class="date-column">{{ document.date | date_to_string }}</td>
+      <td>{{ document.author }}</td>
+    </tr>
+  {% endfor %}
+</table>
+

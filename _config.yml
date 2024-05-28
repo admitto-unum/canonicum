@@ -1,10 +1,19 @@
-title: Dinky theme
-description: Dinky is a red hot theme for GitHub Pages.
-show_downloads: true
-google_analytics:
+title: Canonicum
+
+description: Project documentation
+
+show_downloads: false
+
 theme: jekyll-theme-dinky
 
 gems: [jekyll-mermaid]
 
-mermaid:
-  src: '/home/tlboyd/.local/share/Trash/files/myblog/node_modules/mermaid/dist/mermaid.js'
+#mermaid:
+#  src: '/home/tlboyd/.local/share/Trash/files/myblog/node_modules/mermaid/dist/mermaid.js'
+
+collections:
+  documents:
+    output: true
+
+  techdocs:
+    output: true
