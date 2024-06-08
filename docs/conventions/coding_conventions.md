@@ -2,6 +2,7 @@
 layout: default
 title:  Code Conventions
 parent: Conventions
+nav_order: 2
 ---
 
 Common Coding Conventions used by this project.

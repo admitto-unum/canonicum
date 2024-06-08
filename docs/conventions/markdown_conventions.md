@@ -2,6 +2,7 @@
 layout: default
 title: Markdown
 parent: Conventions
+nav_order: 1
 ---
 
 Cheatsheet of Markdown syntax and usage.

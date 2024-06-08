@@ -2,6 +2,7 @@
 layout: default
 title:  Naming Conventions
 parent: Conventions
+nav_order: 3
 ---
 
 Coding standards collected from various technologies, frameworks 
