@@ -32,7 +32,6 @@ url: "https://github.com/admitto-unum" # the base hostname & protocol for your s
 
 twitter_username: jekyllrb
 github_username:  jekyll
-source: docs
 
 # Build settings
 #theme: minima
